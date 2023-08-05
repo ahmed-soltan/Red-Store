@@ -102,7 +102,7 @@ cartItems.forEach((cartItem, index) => {
   cartItemTitleCell.classList.add("title")
   cartItemTitleCell.innerHTML = cartItem.title.length > 15 ? cartItem.title.substr(0, 37) : cartItem.title;
   let cartItemPriceCell = document.createElement("td");
-  cartItemPriceCell.innerHTML = `$${cartItem.price * cartItem.quantity}`;
+  cartItemPriceCell.innerHTML = `$${(cartItem.price * cartItem.quantity).toFixed(2)}`;
   let cartItemQuantityCell = document.createElement("td");
   cartItemQuantityCell.innerHTML = cartItem.quantity;
   let cartItemSizeCell = document.createElement("td");
@@ -155,7 +155,7 @@ cartProductDetailsDiv.appendChild(cartProductTitle);
 
 
 let cartProductPriceQuantity = document.createElement("p");
-cartProductPriceQuantity.innerHTML = `<span>Price</span> : $${cartItem.price * cartItem.quantity}`;
+cartProductPriceQuantity.innerHTML = `<span>Price</span> : $${(cartItem.price * cartItem.quantity).toFixed(2)}`;
 cartProductDetailsDiv.appendChild(cartProductPriceQuantity);
 
 let cartProductQuantity = document.createElement("p");
