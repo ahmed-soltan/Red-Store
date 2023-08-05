@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Red Store</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/logo.png" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="animate.min.css"/>
+    <link rel="stylesheet" href="animate.css"/>
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <!-- Start your project here-->
+    <div id="preloader">
+      <div class="preloader-spinner"></div>
+    </div>
+    <!-- Start header-->
+       <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light nav1">
+          <div class="container-fluid justify-content-between">
+            <!-- Left elements -->
+            <div class="d-flex">
+              <!-- Brand -->
+              <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+                <img
+                  src="img/logo.png"
+                  class="logo"
+                />
+              </a>      
+            </div>
+            <!-- Left elements -->
+        
+            <!-- Center elements -->
+            <ul class="navbar-nav flex-row d-none d-md-flex">
+              <li class="nav-item me-3 me-lg-1">
+                <a class="nav-link" href="index.html">
+                 Home
+                </a>
+              </li>
+        
+              <li class="nav-item me-3 me-lg-1">
+                <a class="nav-link" href="about.html">
+                 About
+                </a>
+              </li>
+        
+              <li class="nav-item me-3 me-lg-1">
+                <a class="nav-link" href="services.html">
+                  Services
+                </a>
+              </li>
+        
+              <li class="nav-item me-3 me-lg-1">
+                <a class="nav-link" href="products.html">
+                  Products
+                </a>
+              </li>
+              <li class="nav-item me-3 me-lg-1">
+                <a class="nav-link btn" href="contact.html">
+                 Contact Us
+                </a>
+              </li>
+            </ul>
+            <!-- Center elements -->
+        
+            <!-- Right elements -->
+            <ul class="navbar-nav flex-row">
+              <li class="nav-item me-3 me-lg-1">
+                <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+                    class="rounded-circle"
+                    height="22"
+                    alt="Black and White Portrait of a Man"
+                    loading="lazy"
+                  />
+                  <strong class="d-none d-sm-block ms-1">Ahmed</strong>
+                </a>
+              </li>
+              <li class="nav-item me-3 me-lg-1">
+                <a class="nav-link" href="cart.html">
+                  <i class="fa-solid fa-cart-shopping"></i>        
+                  <span class="badge rounded-pill badge-notification"></span>
+                </a>
+              </li>
+        
+              <li class="nav-item dropdown me-3 me-lg-1">
+                <a
+                  class="nav-link dropdown-toggle hidden-arrow"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-mdb-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-chevron-circle-down fa-lg"></i>
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <a class="dropdown-item" href="testimonial.html">Testimonials</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="team.html">Our Team</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <!-- Right elements -->
+          </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light nav2">
+          <!-- Container wrapper -->
+          <div class="container-fluid">
+            <a href="index.html"><img class="logo" src="img/logo.png" alt=""></a>
+            <!-- Toggle button -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#navbarRightAlignExample"
+              aria-controls="navbarRightAlignExample"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+        
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+              <!-- Left links -->
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="products.html">Products</a>
+                </li>
+                <!-- Navbar dropdown -->
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-mdb-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    pages
+                  </a>
+                  <!-- Dropdown menu -->
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                      <a class="dropdown-item" href="cart.html">Cart</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="testimonial.html">Testimonials</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item active" href="contact.html">Contact</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class=" btn " href="contact.html">Contact Us</a>
+                </li>
+              </ul>
+              <!-- Left links -->
+            </div>
+            <!-- Collapsible wrapper -->
+          </div>
+          <!-- Container wrapper -->
+        </nav>
+     </header>
+    <!-- end header-->
+
+        <!-- start contact-->
+        <section class="contact page">
+      
+          <iframe class="wow fadeInLeft" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3435.276810257903!2d31.009651075456446!3d30.56973027466322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7d7d7606d8d69%3A0x5c25db274931744c!2sTOWN%20TEAM!5e0!3m2!1sen!2seg!4v1690903550418!5m2!1sen!2seg" width="660" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      <form action="" >
+          <form action="">
+            <div class=" wow fadeInUp" data-wow-duration="1s">
+              <div class="name">
+                <input type="text" id="first-name" placeholder="Enter Your First Name" required>
+                <input type="text" id="last-name" placeholder="Enter Your Last name" required>
+              </div>
+              <div class="name n2">
+                <input type="email" id="email" placeholder="Enter Your Email" required>
+              </div>
+              <div class="name">
+                 <textarea placeholder="Message" id="message"></textarea>
+              </div>
+              <button href="bye.html" onclick="sendMail()" class="btn">Send Message</button>
+            </div>
+          </form>
+      </section>
+      <!-- start contact -->
+    <button class="chatbot-toggler">
+      <span class="material-symbols-rounded"><i class="fa-solid fa-message"></i></span>
+      <span class="material-symbols-outlined"><i class="fa-solid fa-x"></i></span>
+    </button>
+    <div class="chatbot">
+      <header>
+        <h2>Chatbot</h2>
+        <span class="close-btn material-symbols-outlined"><i class="fa-solid fa-x"></i></span>
+      </header>
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <span class="material-symbols-outlined"><img src="img/logo.png" class="logo-chat" alt=""></span>
+          <p>Hi there 👋<br>How can I help you today?</p>
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+        <span id="send-btn" class="material-symbols-rounded">send</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+      <!-- Section: Social media -->
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+          <a href="https://www.facebook.com/profile.php?id=100093967337801" class="me-4 text-reset">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/ahmedso92029210" class="me-4 text-reset">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://mail.google.com/mail/u/0/?ogbl#inbox" class="me-4 text-reset">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="https://www.instagram.com/ahmed_adel_yu/" class="me-4 text-reset">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/ahmed-sultan-a24834259/" class="me-4 text-reset">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/ahmed-soltan" class="me-4 text-reset">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                <img src="img/logo.png" alt="" class="logo">
+              </h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur neque ipsum 
+                ipsa labore iure recusandae natus maxime, necessitatibus commodi fuga.
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">categories</h6>
+              <p>
+                <a href="products.html" class="text-reset">Men's clothes</a>
+              </p>
+              <p>
+                <a href="products.html" class="text-reset">women's clothes</a>
+              </p>
+              <p>
+                <a href="products.html" class="text-reset">Jewelry</a>
+              </p>
+              <p>
+                <a href="products.html" class="text-reset">Electronics</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+              <p>
+                <a href="#!" class="text-reset">Pricing</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Settings</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Orders</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Help</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                info@example.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+              <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2023 Copyright:
+        <a class="text-reset fw-bold" href="#">Ahmed Sultan</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+
+
+    <!-- End your project here-->
+    
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+    <script src="js/count.js"></script>
+    <script src="js/auto-reply.js"></script>
+    <script src="wow.min.js"></script>
+    <script>
+      new WOW().init();
+      window.addEventListener("load", function() {
+  var preloader = document.getElementById("preloader");
+  preloader.style.visibility = "hidden"; // Hide the preloader initially
+
+  // Show the preloader for a minimum duration of 2 seconds
+  setTimeout(function() {
+    // Hide the preloader
+    preloader.style.visibility = "hidden";
+  }, 2000);
+});
+    </script>
+  </body>
+</html>
