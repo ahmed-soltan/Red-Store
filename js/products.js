@@ -29,7 +29,7 @@ function DisplayProducts(data, category = '') {
   for (let i = 0; i < shuffledData.length; i++) {
     if (category === '' || shuffledData[i].category === category) {
       container.innerHTML += `
-        <div class="product wow fadeInUp" data-wow-duration=${(i/2)+.5} data-wow-delay=".5s" onclick='Product(${shuffledData[i].id})'>
+        <div class="product" onclick='Product(${shuffledData[i].id})'>
           <img class="image" src=${shuffledData[i].image} alt="">
           <h5 class="title">${shuffledData[i].title.length>50?shuffledData[i].title.substr(0,50):shuffledData[i].title}</h5>
           <div class="stars">
