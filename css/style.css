@@ -768,6 +768,7 @@ footer p {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  margin:80px 0;
 }
 .cartItem img {
   max-width: 20%;
