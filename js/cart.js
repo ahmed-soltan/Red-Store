@@ -4,12 +4,12 @@ let cartTableBody = document.querySelector("tbody");
 let cartForm = document.querySelector(".cart-form");
 let OrderBtn = document.querySelector(".order-btn");
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
   var preloader = document.getElementById("preloader");
   preloader.style.visibility = "hidden"; // Hide the preloader initially
 
   // Show the preloader for a minimum duration of 2 seconds
-  setTimeout(function() {
+  setTimeout(function () {
     // Hide the preloader
     preloader.style.visibility = "hidden";
   }, 2000);
@@ -22,6 +22,7 @@ OrderBtn.addEventListener("click", function (event) {
     return false;
   }
 });
+
 let totalPriceElement = document.querySelector(".total");
 let subTotalPriceElement = document.querySelector(".sub-total");
 let TaxesPriceElement = document.querySelector(".taxes");
@@ -34,7 +35,6 @@ function updateCartItemCount() {
 }
 
 function deleteCartItem(row, index) {
-
   cartTableBody.removeChild(row);
 
   cartItems.splice(index, 1);
@@ -56,31 +56,23 @@ function deleteCartItems(cartProduct, index) {
   updateCartItemCount();
 }
 
-function deleteCartItemAndCartProduct(row, cartProduct, index) {
-  deleteCartItem(row, index);
-  deleteCartItems(cartProduct, index);
-}
-
 function calculateTotalPrice() {
   let subTotalPrice = 0;
-  
-  cartItems.forEach(cartItem => {
+
+  cartItems.forEach((cartItem) => {
     subTotalPrice += cartItem.price * cartItem.quantity;
   });
-  
-  let taxes=((subTotalPrice*10)/100).toFixed(2)
-  
+
+  let taxes = ((subTotalPrice * 10) / 100).toFixed(2);
+
   subTotalPriceElement.innerHTML = `$${subTotalPrice.toFixed(2)}`;
   TaxesPriceElement.innerHTML = `$${taxes}`;
-  totalPriceElement.innerHTML = `$${(Number(subTotalPrice)+Number(taxes)).toFixed(2)}`;
+  totalPriceElement.innerHTML = `$${(Number(subTotalPrice) + Number(taxes)).toFixed(2)}`;
 }
 
 let cartContainer = document.querySelector(".cartItem");
 
 cartItems.forEach((cartItem, index) => {
-
-
-
   let cartTableRow = document.createElement("tr");
 
   let cartItemImageCell = document.createElement("td");
@@ -99,10 +91,10 @@ cartItems.forEach((cartItem, index) => {
   }
 
   let cartItemTitleCell = document.createElement("td");
-  cartItemTitleCell.classList.add("title")
+  cartItemTitleCell.classList.add("title");
   cartItemTitleCell.innerHTML = cartItem.title.length > 15 ? cartItem.title.substr(0, 37) : cartItem.title;
   let cartItemPriceCell = document.createElement("td");
-  cartItemPriceCell.innerHTML = `$${(cartItem.price * cartItem.quantity).toFixed(2)}`;
+  cartItemPriceCell.innerHTML = `$${cartItem.price * cartItem.quantity}`;
   let cartItemQuantityCell = document.createElement("td");
   cartItemQuantityCell.innerHTML = cartItem.quantity;
   let cartItemSizeCell = document.createElement("td");
@@ -111,9 +103,8 @@ cartItems.forEach((cartItem, index) => {
   let deleteButton = document.createElement("button");
   deleteButton.classList.add("cartAction", "btn", "btn-danger");
   deleteButton.innerHTML = "Delete";
-  deleteButton.addEventListener("click", () => {
-    const cartProduct = document.querySelectorAll(".cartProduct")[index];
-    deleteCartItemAndCartProduct(cartTableRow, cartProduct, index);
+  deleteButton.addEventListener("click", function () {
+    deleteCartItem(cartTableRow, index);
   });
   cartActionCell.appendChild(deleteButton);
 
@@ -126,60 +117,48 @@ cartItems.forEach((cartItem, index) => {
 
   cartTableBody.appendChild(cartTableRow);
 
-let cartProduct = document.createElement("div");
-cartProduct.classList.add("cartProduct");
+  let cartProduct = document.createElement("div");
+  cartProduct.classList.add("cartProduct");
 
-let cartProductImage = document.createElement("img");
+  let cartProductImage = document.createElement("img");
 
-if (cartItem.image && cartItem.image.trim() !== "") {
-  cartProductImage.src = cartItem.image;
+  if (cartItem.image && cartItem.image.trim() !== "") {
+    cartProductImage.src = cartItem.image;
 
-  cartProductImage.addEventListener("error", () => {
-    console.error(`Error loading image for item ${cartItem.title}: ${cartItem.image}`);
-  });
+    cartProductImage.addEventListener("error", () => {
+      console.error(`Error loading image for item ${cartItem.title}: ${cartItem.image}`);
+    });
 
-  cartProduct.appendChild(cartProductImage);
-} else {
-  console.warn(`No image found for item ${cartItem.title}`);
-}
+    cartProduct.appendChild(cartProductImage);
+  } else {
+    console.warn(`No image found for item ${cartItem.title}`);
+  }
 
-let cartProductDetails = document.createElement("div");
-cartProductDetails.classList.add("cartDetails");
-
-let cartProductDetailsDiv = document.createElement("div");
-cartProductDetailsDiv.classList.add("details");
-
-let cartProductTitle = document.createElement("p");
-cartProductTitle.innerHTML =`<span>Title</span> : ${ cartItem.title.length > 15 ? cartItem.title.substr(0, 35) : cartItem.title}`;
-cartProductDetailsDiv.appendChild(cartProductTitle);
-
-
-let cartProductPriceQuantity = document.createElement("p");
-cartProductPriceQuantity.innerHTML = `<span>Price</span> : $${(cartItem.price * cartItem.quantity).toFixed(2)}`;
-cartProductDetailsDiv.appendChild(cartProductPriceQuantity);
-
+  let cartProductTitle = document.createElement("h4");
+cartProductTitle.innerHTML = cartItem.title.length > 15 ? cartItem.title.substr(0, 37) : cartItem.title;
+let cartProductPrice = document.createElement("p");
+cartProductPrice.innerHTML = `$${cartItem.price * cartItem.quantity}`;
 let cartProductQuantity = document.createElement("p");
-cartProductQuantity.innerHTML = `<span>Quantity</span> : ${cartItem.quantity}`;
-cartProductDetailsDiv.appendChild(cartProductQuantity);
-
+cartProductQuantity.innerHTML = cartItem.quantity;
 let cartProductSize = document.createElement("p");
-cartProductSize.innerHTML = `<span>size</span> : ${cartItem.category == "jewelery" || cartItem.category == "electronics" ? "_" :cartItem.size}`;
-cartProductDetailsDiv.appendChild(cartProductSize);
-
-cartProductDetails.appendChild(cartProductDetailsDiv);
-
-cartProduct.appendChild(cartProductDetails);
-
-let cartProductDeleteButton = document.createElement("button");
-cartProductDeleteButton.classList.add("cartProductDeleteButton", "btn", "btn-danger");
-cartProductDeleteButton.innerHTML = "Delete";
-cartProductDeleteButton.addEventListener("click", () => {
-  deleteCartItemAndCartProduct(cartTableRow, cartProduct, index);
+cartProductSize.innerHTML = cartItem.category == "jewelery" || cartItem.category == "electronics" ? "_" : cartItem.size;
+let cartProductDelete = document.createElement("button");
+cartProductDelete.innerHTML = "Delete";
+cartProductDelete.classList.add("btn", "btn-danger");
+cartProductDelete.addEventListener("click", function () {
+  deleteCartItems(cartProduct, index);
 });
 
-cartProductDetails.appendChild(cartProductDeleteButton);
+cartProduct.appendChild(cartProductTitle);
+cartProduct.appendChild(cartProductPrice);
+cartProduct.appendChild(cartProductQuantity);
+cartProduct.appendChild(cartProductSize);
+cartProduct.appendChild(cartProductDelete);
 
 cartContainer.appendChild(cartProduct);
+
+calculateTotalPrice();
+updateCartItemCount();
 });
 
 calculateTotalPrice();
